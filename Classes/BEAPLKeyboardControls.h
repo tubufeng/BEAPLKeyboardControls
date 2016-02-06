@@ -4,9 +4,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface APLKeyboardControls : NSObject
+@interface BEAPLKeyboardControls : NSObject
 
-extern NSString* const APLKeyboardControlsInputDidBeginEditingNotification;
+extern NSString* const BEAPLKeyboardControlsInputDidBeginEditingNotification;
 
 @property (nonatomic, strong) NSArray* inputFields;
 @property (nonatomic, assign) BOOL hasPreviousNext;
