@@ -1,4 +1,4 @@
-APLKeyboardControls
+BEAPLKeyboardControls
 =========
 InputAccesoryView above the keyboard with done button and optional previous and next buttons.
 
@@ -13,17 +13,17 @@ InputAccesoryView above the keyboard with done button and optional previous and 
 ## Installation
 Install via cocoapods by adding this to your Podfile:
 
-	pod "APLKeyboardControls"
+	pod 'BEAPLKeyboardControls', :git => 'https://github.com/tubufeng/BEAPLKeyboardControls.git'
 
 ## Usage
 Import header file:
 
-	#import "APLKeyboardControls.h"
+	#import "BEAPLKeyboardControls.h"
 	
 Define keyboardControls as a property in your viewController and initialize it like this:
 	
 	NSArray* inputChain = @[self.textField1, self.textField2, self.textField3];
-	self.keyboardControls = [[APLKeyboardControls alloc] initWithInputFields:inputChain];
+	self.keyboardControls = [[BEAPLKeyboardControls alloc] initWithInputFields:inputChain];
 	self.keyboardControls.hasPreviousNext = YES;
 
 Customize buttons like this:
