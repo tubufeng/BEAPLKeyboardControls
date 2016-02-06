@@ -2,10 +2,10 @@
 //  Copyright (c) 2013 apploft GmbH. All rights reserved.
 //
 
-#import "APLKeyboardControls.h"
-#import "NSData+Base64.h"
+#import "BEAPLKeyboardControls.h"
+//#import "NSData+Base64.h"
 
-@interface APLKeyboardControls ()
+@interface BEAPLKeyboardControls ()
 
 @property (nonatomic, weak) UIResponder* currentInput;
 @property (nonatomic, strong) UIBarButtonItem* flexSpace;
@@ -14,9 +14,9 @@
 @end
 
 
-@implementation APLKeyboardControls
+@implementation BEAPLKeyboardControls
 
-NSString* const APLKeyboardControlsInputDidBeginEditingNotification = @"APLKeyboardControlsInputDidBeginEditingNotification";
+NSString* const BEAPLKeyboardControlsInputDidBeginEditingNotification = @"BEAPLKeyboardControlsInputDidBeginEditingNotification";
 
 #pragma mark - initialization
 
