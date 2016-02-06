@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-  s.name         = "APLKeyboardControls"
+  s.name         = "BEAPLKeyboardControls"
   s.version      = "0.1.3"
   s.summary      = "inputAccesoryView above the keyboard with done button and optional previous and next buttons"
 
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
                    * implemented with iOS 7 in mind
                    DESC
 
-  s.homepage     = "https://github.com/apploft/APLKeyboardControls"
+  s.homepage     = "https://github.com/tubufeng/BEAPLKeyboardControls"
 
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   
@@ -20,11 +20,10 @@ Pod::Spec.new do |s|
   
   s.platform     = :ios, '5.0'
 
-  s.source       = { :git => "https://github.com/apploft/APLKeyboardControls.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/tubufeng/BEAPLKeyboardControls.git", :tag => s.version.to_s }
 
   s.source_files  = 'Classes', 'Classes/**/*.{h,m}'
   s.exclude_files = 'Classes/Exclude'
-  s.dependency 'NSData+Base64', '~> 1.0.0'
   s.requires_arc = true
 
 end
