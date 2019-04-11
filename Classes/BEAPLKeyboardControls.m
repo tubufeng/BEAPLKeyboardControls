@@ -4,6 +4,7 @@
 
 #import "BEAPLKeyboardControls.h"
 //#import "NSData+Base64.h"
+#import "NSData+MKBase64.h"
 
 @interface BEAPLKeyboardControls ()
 
@@ -91,7 +92,7 @@ NSString* const BEAPLKeyboardControlsInputDidBeginEditingNotification = @"BEAPLK
             } else if ([input isKindOfClass:[UITextView class]]) {
                 [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextViewTextDidBeginEditingNotification object:input];
             } else {
-                [[NSNotificationCenter defaultCenter] removeObserver:self name:APLKeyboardControlsInputDidBeginEditingNotification object:input];
+                [[NSNotificationCenter defaultCenter] removeObserver:self name:BEAPLKeyboardControlsInputDidBeginEditingNotification object:input];
             }
         }
     }
@@ -106,7 +107,7 @@ NSString* const BEAPLKeyboardControlsInputDidBeginEditingNotification = @"BEAPLK
             } else if ([input isKindOfClass:[UITextView class]]) {
                 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inputDidBeginEditing:) name:UITextViewTextDidBeginEditingNotification object:input];
             } else {
-                [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inputDidBeginEditing:) name:APLKeyboardControlsInputDidBeginEditingNotification object:input];
+                [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inputDidBeginEditing:) name:BEAPLKeyboardControlsInputDidBeginEditingNotification object:input];
             }
         }
     }
@@ -214,10 +215,10 @@ NSString* const BEAPLKeyboardControlsInputDidBeginEditingNotification = @"BEAPLK
         return nil;
     }
     
-    #pragma clang diagnostic push
-    #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     NSData *decodedBase64Data = [[NSData alloc] initWithData:[NSData dataFromBase64String:[self performSelector:imageMethodSelector]]];
-    #pragma clang diagnostic pop
+#pragma clang diagnostic pop
     
     UIImage *buttonImage = [UIImage imageWithData:decodedBase64Data];
     return [UIImage imageWithCGImage:buttonImage.CGImage scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
@@ -248,3 +249,4 @@ NSString* const BEAPLKeyboardControlsInputDidBeginEditingNotification = @"BEAPLK
 }
 
 @end
+
